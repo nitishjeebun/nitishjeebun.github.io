@@ -44,7 +44,7 @@
       <div class="wrap footer-grid">
         <div>
           <strong>Nitish Jeebun</strong>
-          <p class="tiny">Independent iOS apps. Private by default. No accounts, no tracking, no public inbox.</p>
+          <p class="tiny">Independent iOS apps. Private by default. No accounts, no tracking. Contact: <a href="mailto:operations.zero.info@gmail.com">operations.zero.info@gmail.com</a></p>
         </div>
         <div class="footer-links">
           <a href="/apps/">Apps</a>
@@ -55,7 +55,7 @@
         <div class="footer-links">
           <a href="/privacy/">Privacy</a>
           <a href="/support/">Support</a>
-          <a href="https://github.com/nitishjeebun">GitHub</a>
+          <a href="mailto:operations.zero.info@gmail.com">Email</a>
         </div>
       </div>
     `;
@@ -65,12 +65,13 @@
     el.textContent = String(new Date().getFullYear());
   });
 
+  const supportEmail = "operations.zero.info@gmail.com";
   const form = document.querySelector("[data-support-form]");
   if (form) {
     form.addEventListener("submit", (event) => {
       event.preventDefault();
       const data = new FormData(form);
-      const title = encodeURIComponent(
+      const subject = encodeURIComponent(
         `[${data.get("app") || "Site"}] ${data.get("subject") || "Support request"}`
       );
       const body = encodeURIComponent(
@@ -82,14 +83,9 @@
           data.get("message") || ""
         ].join("\n")
       );
-      window.open(
-        `https://github.com/nitishjeebun/nitishjeebun.github.io/issues/new?title=${title}&body=${body}`,
-        "_blank",
-        "noopener"
-      );
+      window.location.href = `mailto:${supportEmail}?subject=${subject}&body=${body}`;
       const done = form.querySelector(".success");
       if (done) done.style.display = "block";
-      form.reset();
     });
   }
 })();
