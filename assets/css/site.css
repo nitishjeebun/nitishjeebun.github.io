@@ -214,6 +214,7 @@ h3 { font-size: 1.5rem; margin: 0 0 8px; }
   color: var(--accent);
 }
 .status.soon { background: #f3e6d6; color: #8a4b16; }
+.status.live { background: #e7f4ea; color: var(--ok); }
 
 .principle { min-height: 220px; }
 .page-hero { padding: 72px 0 20px; }

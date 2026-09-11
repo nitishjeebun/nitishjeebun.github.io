@@ -16,11 +16,11 @@ window.STUDIO_APPS = [
     name: "QRArtify",
     tagline: "QR codes, designed.",
     summary: "A design-first QR generator. Ten style engines, photo art, share extension, and a local library — all offline, with no tracking.",
-    status: "coming-soon",
-    statusLabel: "In development",
+    status: "available",
+    statusLabel: "On the App Store",
     platforms: ["iPhone", "iPad"],
     accent: "qr",
-    storeUrl: "",
+    storeUrl: "https://apps.apple.com/us/app/qrartify-qr-code-maker/id6755909289",
     hero: "/assets/img/qrartify/artpack.neon.01.jpg"
   }
 ];

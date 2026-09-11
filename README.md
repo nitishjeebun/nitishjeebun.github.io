@@ -17,4 +17,4 @@ Personal studio site for independent iOS apps.
 3. Replace copy, screenshots, and status.
 4. Add the URLs to `sitemap.xml` and the footer in `assets/js/site.js`.
 
-App Store buttons stay disabled until a store URL is set on the app entry.
+Set `storeUrl` in `assets/js/apps.js` when an app is on the App Store. QRArtify is live at https://apps.apple.com/us/app/qrartify-qr-code-maker/id6755909289
