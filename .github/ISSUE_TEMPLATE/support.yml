@@ -1,0 +1,26 @@
+name: Support request
+description: Help with an app or this website
+title: "[App] Short summary"
+labels: ["support"]
+body:
+  - type: input
+    id: app
+    attributes:
+      label: App
+      placeholder: SnapOrdina, QRArtify, Website
+    validations:
+      required: true
+  - type: input
+    id: device
+    attributes:
+      label: Device
+  - type: input
+    id: system
+    attributes:
+      label: System version
+  - type: textarea
+    id: message
+    attributes:
+      label: What happened
+    validations:
+      required: true

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Support — Nitish Jeebun</title>
+  <meta name="description" content="Support for SnapOrdina, QRArtify, and other apps by Nitish Jeebun.">
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Newsreader:opsz,wght@6..72,400;6..72,500&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/site.css">
+</head>
+<body>
+  <header class="site-header"><nav class="wrap nav" data-nav></nav></header>
+  <main class="wrap">
+    <section class="page-hero">
+      <p class="eyebrow">Help</p>
+      <h1>Support</h1>
+      <p class="lede">Start with the app pages. If you still need help, send a request through the form. There is no public email on this site.</p>
+    </section>
+
+    <section class="section split">
+      <div>
+        <article class="faq">
+          <h3>Where do I find app-specific help?</h3>
+          <p><a href="/snapordina/support/">SnapOrdina support</a> and <a href="/qrartify/support/">QRArtify support</a> cover permissions, scanning, and known limits.</p>
+        </article>
+        <article class="faq" style="margin-top:16px">
+          <h3>How are requests handled?</h3>
+          <p>The form opens a GitHub issue with the details you entered. That is the support desk for this studio. Include the app name, device model, and system version.</p>
+        </article>
+        <article class="faq" style="margin-top:16px">
+          <h3>Do I need a GitHub account?</h3>
+          <p>Yes, to submit the request. The form never asks for an email address on this site and never displays one.</p>
+        </article>
+      </div>
+      <form class="panel" data-support-form>
+        <p class="kicker">Support request</p>
+        <h2>Tell me what broke.</h2>
+        <label>App
+          <select name="app" required>
+            <option value="SnapOrdina">SnapOrdina</option>
+            <option value="QRArtify">QRArtify</option>
+            <option value="Website">This website</option>
+            <option value="Other">A future app</option>
+          </select>
+        </label>
+        <label>Subject
+          <input name="subject" required placeholder="Cannot find a screenshot">
+        </label>
+        <label>Device
+          <input name="device" placeholder="iPhone 16 Pro">
+        </label>
+        <label>System
+          <input name="system" placeholder="iOS 26">
+        </label>
+        <label>What happened
+          <textarea name="message" required placeholder="What you expected, what you saw, and any steps to reproduce."></textarea>
+        </label>
+        <button class="btn btn-primary" type="submit">Open support request</button>
+        <p class="form-note">Opens GitHub with a prepared issue. No email address is collected or shown here.</p>
+        <p class="success">The request draft is ready in a new tab.</p>
+      </form>
+    </section>
+  </main>
+  <footer class="site-footer" data-footer></footer>
+  <script src="/assets/js/site.js"></script>
+</body>
+</html>
