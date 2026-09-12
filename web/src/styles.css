@@ -357,6 +357,12 @@ h3 { font-size: 1.15rem; margin: 0 0 8px; }
   width: 22px;
   background: var(--snap);
 }
+.ipad-carousel.qr .carousel-dot[aria-current="true"] { background: var(--qr); }
+.ipad-carousel.qr .carousel-btn:hover,
+.ipad-carousel.qr .carousel-btn:focus-visible {
+  border-color: rgba(255, 122, 60, 0.55);
+  background: rgba(255, 122, 60, 0.12);
+}
 .art-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 .art-grid img {
   width: 100%;
