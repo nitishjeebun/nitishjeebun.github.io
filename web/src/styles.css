@@ -265,6 +265,86 @@ h3 { font-size: 1.15rem; margin: 0 0 8px; }
 .shot-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
 .shot { padding: 12px; }
 .shot img { border-radius: 18px; }
+
+.ipad-carousel { margin-top: 72px; }
+.carousel-head { margin-bottom: 28px; }
+.ipad {
+  width: min(920px, 100%);
+  margin: 0 auto;
+  background: #050505;
+  border-radius: 28px;
+  padding: 14px;
+  border: 1px solid var(--line);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+}
+.carousel-viewport {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  touch-action: pan-y;
+  user-select: none;
+}
+.carousel-slide {
+  margin: 0;
+  opacity: 0;
+  position: absolute;
+  inset: 0;
+  transition: opacity 480ms ease;
+  pointer-events: none;
+}
+.carousel-slide.is-active {
+  position: relative;
+  opacity: 1;
+  pointer-events: auto;
+}
+.carousel-slide img {
+  width: 100%;
+  border-radius: 16px;
+}
+.carousel-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 20px;
+}
+.carousel-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--ink);
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: border-color 180ms ease, background 180ms ease;
+}
+.carousel-btn:hover,
+.carousel-btn:focus-visible {
+  border-color: rgba(139, 124, 255, 0.55);
+  background: rgba(139, 124, 255, 0.12);
+  outline: none;
+}
+.carousel-dots {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.carousel-dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: 0;
+  border-radius: 99px;
+  background: rgba(255, 255, 255, 0.22);
+  cursor: pointer;
+  transition: width 180ms ease, background 180ms ease;
+}
+.carousel-dot[aria-current="true"] {
+  width: 22px;
+  background: var(--snap);
+}
 .art-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 .art-grid img {
   width: 100%;

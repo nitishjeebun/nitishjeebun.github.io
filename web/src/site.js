@@ -90,6 +90,69 @@ document.querySelectorAll("[data-reveal]").forEach((node) => {
   else reveal.observe(node);
 });
 
+document.querySelectorAll("[data-carousel]").forEach((root) => {
+  const slides = [...root.querySelectorAll("[data-carousel-slide]")];
+  const dots = root.querySelector("[data-carousel-dots]");
+  const prev = root.querySelector("[data-carousel-prev]");
+  const next = root.querySelector("[data-carousel-next]");
+  if (slides.length < 2 || !dots || !prev || !next) return;
+
+  let index = 0;
+  let timer = 0;
+  const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  slides.forEach((_, i) => {
+    const dot = document.createElement("button");
+    dot.type = "button";
+    dot.className = "carousel-dot";
+    dot.setAttribute("aria-label", `Show iPad screenshot ${i + 1}`);
+    dot.addEventListener("click", () => go(i, true));
+    dots.append(dot);
+  });
+
+  const go = (nextIndex, restart) => {
+    index = (nextIndex + slides.length) % slides.length;
+    slides.forEach((slide, i) => slide.classList.toggle("is-active", i === index));
+    dots.querySelectorAll("button").forEach((dot, i) => {
+      if (i === index) dot.setAttribute("aria-current", "true");
+      else dot.removeAttribute("aria-current");
+    });
+    if (restart) play();
+  };
+
+  const stop = () => {
+    window.clearInterval(timer);
+    timer = 0;
+  };
+
+  const play = () => {
+    stop();
+    if (reduceMotion) return;
+    timer = window.setInterval(() => go(index + 1), 4800);
+  };
+
+  prev.addEventListener("click", () => go(index - 1, true));
+  next.addEventListener("click", () => go(index + 1, true));
+  root.addEventListener("pointerenter", stop);
+  root.addEventListener("pointerleave", play);
+  root.addEventListener("focusin", stop);
+  root.addEventListener("focusout", (event) => {
+    if (!root.contains(event.relatedTarget)) play();
+  });
+
+  let startX = 0;
+  root.addEventListener("pointerdown", (event) => {
+    startX = event.clientX;
+  });
+  root.addEventListener("pointerup", (event) => {
+    const delta = event.clientX - startX;
+    if (Math.abs(delta) > 40) go(index + (delta < 0 ? 1 : -1), true);
+  });
+
+  go(0);
+  play();
+});
+
 const form = document.querySelector("[data-support-form]");
 if (form) {
   form.addEventListener("submit", (event) => {
