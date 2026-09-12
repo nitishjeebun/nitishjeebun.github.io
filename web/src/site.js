@@ -51,7 +51,7 @@ if (footer) {
     <div class="wrap footer-grid">
       <div>
         <strong>Nitish Jeebun</strong>
-        <p class="tiny">Independent iOS apps. Private by default. Contact: <a href="mailto:${supportEmail}">${supportEmail}</a></p>
+        <p class="tiny">Independent iOS apps that use the power already on the device. Contact: <a href="mailto:${supportEmail}">${supportEmail}</a></p>
       </div>
       <div class="footer-links">
         <a href="/apps/">Apps</a>

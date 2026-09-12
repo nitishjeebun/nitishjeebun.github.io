@@ -2,7 +2,7 @@ export const STUDIO_APPS = [
   {
     slug: "snapordina",
     name: "SnapOrdina",
-    tagline: "A home for your screenshots.",
+    tagline: "On-device screenshot intelligence.",
     status: "coming-soon",
     statusLabel: "Coming to the App Store",
     storeUrl: ""
@@ -10,7 +10,7 @@ export const STUDIO_APPS = [
   {
     slug: "qrartify",
     name: "QRArtify",
-    tagline: "QR codes, designed.",
+    tagline: "Every QR, built on the device.",
     status: "available",
     statusLabel: "On the App Store",
     storeUrl: "https://apps.apple.com/us/app/qrartify-qr-code-maker/id6755909289"
