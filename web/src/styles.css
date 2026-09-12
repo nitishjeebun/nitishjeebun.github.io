@@ -231,6 +231,18 @@ h3 { font-size: 1.15rem; margin: 0 0 8px; }
 }
 .app-card:hover .preview img { transform: scale(1.04); }
 .app-card .body, .principle, .panel, .faq, .legal { padding: 24px 26px 26px; }
+.app-name {
+  font-family: var(--display);
+  font-size: clamp(1.9rem, 3.2vw, 2.4rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  text-transform: none;
+  margin: 0 0 12px;
+}
+.app-name.snap, .app-card.snap .app-name { color: #c8c0ff; }
+.app-name.qr, .app-card.qr .app-name { color: #ff9a68; }
+.product-hero .app-name { margin: 0 0 8px; }
 .kicker { font-size: 0.78rem; color: var(--muted); margin-bottom: 8px; }
 .status {
   display: inline-block;
@@ -262,14 +274,14 @@ h3 { font-size: 1.15rem; margin: 0 0 8px; }
   animation: float 6s ease-in-out infinite;
 }
 .phone img { border-radius: 32px; }
-.shot-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.shot-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
 .shot { padding: 12px; }
 .shot img { border-radius: 18px; }
 
 .ipad-carousel { margin-top: 72px; }
 .carousel-head { margin-bottom: 28px; }
 .ipad {
-  width: min(920px, 100%);
+  width: min(var(--max), 100%);
   margin: 0 auto;
   background: #050505;
   border-radius: 28px;
@@ -413,9 +425,10 @@ html.js-ready [data-reveal].is-in { animation-play-state: running; }
 }
 
 @media (max-width: 860px) {
-  .hero, .product-hero, .grid-2, .grid-3, .split, .footer-grid, .shot-row {
+  .hero, .product-hero, .grid-2, .grid-3, .split, .footer-grid {
     grid-template-columns: 1fr;
   }
+  .shot-row { grid-template-columns: repeat(2, 1fr); }
   .menu-toggle { display: block; }
   .nav-links, .nav-cta { display: none; }
   .nav.is-open .nav-links, .nav.is-open .nav-cta {
