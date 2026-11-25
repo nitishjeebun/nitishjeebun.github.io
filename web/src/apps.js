@@ -3,9 +3,9 @@ export const STUDIO_APPS = [
     slug: "snapordina",
     name: "SnapOrdina",
     tagline: "On-device screenshot intelligence.",
-    status: "coming-soon",
-    statusLabel: "Coming to the App Store",
-    storeUrl: ""
+    status: "available",
+    statusLabel: "On the App Store",
+    storeUrl: "https://apps.apple.com/us/app/snapordina/id6811127338"
   },
   {
     slug: "qrartify",
